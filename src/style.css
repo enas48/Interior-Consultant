@@ -200,9 +200,13 @@ footer{
     /*style main*/
     main{
         flex-direction: column;
+        margin: 40px 0 100px;
     }
     main .hero-img{ 
         width: 100%;
+    }
+    main .card{
+        width: 64%;
     }
 }
 .nav-active{transform: translateX(0%);}
