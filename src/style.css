@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*base style*/
+body{
+    color: rgb(241, 241, 241);
+    background-color: #181719;
+    font-family: 'Amiri', serif;
+}
+a{
+    text-decoration: none;
+    color: rgb(241, 241, 241);
+    font-size: 1.2em;
+}
+img{max-width: 100%; height: auto;}
+
+/*module style*/
+.container{padding:20px;}
+.active{font-weight: bold;}
+.material-icons.md-36 { font-size: 36px;  color: rgb(241, 241, 241);}
+  
+  /* Typeography General*/
+  h1 {font-size: 2em;}
+  p {line-height: 1.4em;color: #CBCACB;}
+
+
+/* style navbar*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+}
+
+.logo{
+    text-transform: uppercase;
+    border: 1px solid rgb(241, 241, 241);
+  /*  font-size: 1.2em;*/
+    font-weight: 200;
+    padding: 6px 10px;
+}
+.nav-links{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-links li{
+    list-style: none;
+    text-transform: capitalize;
+}
+.nav-links li a{
+    display: block;
+    padding: 0 10px;
+    border-radius: 6px;
+    transition: ease 0.3s all;
+}
+.nav-links li a:hover{
+    background-color:  rgb(241, 241, 241);
+    color: #181719;
+    transform: scale(1.1); 
+
+}
+.bar{
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/*style main content*/
+main{
+    margin:100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+main .hero{
+    margin-bottom: 40px;
+}
+main .hero h1{
+    text-transform: capitalize;
+}
+.hero button{
+    background: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: rgb(241, 241, 241);
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 6px 28px 6px 6px;
+    border-radius: 6px;
+    font-weight: bold;  
+    transition: ease 0.3s all;
+    position: relative;
+}
+.hero button::first-letter{
+    text-transform: uppercase;
+}
+.hero button:hover{
+    background-color:  rgb(241, 241, 241);
+    color: #181719;
+    transform: scale(1.1);  
+}
+.hero button span{
+    position: absolute;
+    top: 3px;
+    right: -2px;
+}
+
+main .hero-img{ 
+    width: 60%;
+    position: relative;
+}
+
+/*card style */
+main .hero-img .card{
+    position: absolute;
+    padding: 10px 15px;
+    background-color:#181719; 
+    bottom: -40px;
+    right: 20px;
+    -webkit-box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+}
+main .hero-img .card .info{
+    display: flex;
+    align-items: center;
+    color: #eee;
+    margin-bottom: 10px;
+}
+.card img{
+    border-radius: 50%;
+    width: 15%;
+    margin-right: 10px;
+}
+.card h4{
+text-transform: capitalize; 
+line-height: 1.1;
+font-size: 0.8em; 
+}
+.card h4 span{
+    font-weight: lighter;
+    color: #818181;
+    text-transform: lowercase;
+}
+.card p{
+    line-height: 1.2;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: rgb(241, 241, 241);
+}
+
+/*style footer*/
+footer{
+    text-align: center;
+    font-size: 1em;
+    margin-top: 40px ;
+}
+
+
+
+/* media query for responsive page*/
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    /*style nav*/
+    .nav-links{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background:#181719; 
+        z-index: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.6s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links li a{
+        display: block;
+        padding: 10px;
+
+    }
+    .bar{
+        display: block;
+    }
+    /*style main*/
+    main{
+        flex-direction: column;
+    }
+    main .hero-img{ 
+        width: 100%;
+    }
+}
+.nav-active{transform: translateX(0%);}
+
+
+@media screen and (min-width:992px){
+h1{
+    font-size: 3em;
+
+}
+main .card{
+font-size: 1.4em;
+padding: 15px 20px;
+}
+}
+
+/*Keyframe Animations for nav list */
+@keyframes navLinksFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
